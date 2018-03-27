@@ -1,0 +1,15 @@
+Thumbs.db
+
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
+*.iml
+
+## Directory-based project format:
+.idea/
+
+# Maven
+target/
+
+# Folder with embedded server's logs
+/logs/
+
+ 
