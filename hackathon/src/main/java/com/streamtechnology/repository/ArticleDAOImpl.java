@@ -1,4 +1,4 @@
-package com.streamtechnology.dao;
+package com.streamtechnology.repository;
 
 import com.streamtechnology.entity.Article;
 import org.springframework.stereotype.Repository;

@@ -2,23 +2,28 @@ package com.streamtechnology.controller;
 
 import com.streamtechnology.entity.Article;
 import com.streamtechnology.service.ArticleService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("user")
 public class ArticleController {
-    @Autowired
+    private final Logger LOGGER = LoggerFactory.getLogger(ArticleController.class);
     private ArticleService articleService;
+
+    public ArticleController (ArticleService articleService){
+        this.articleService = articleService;
+    }
     @GetMapping("article/{id}")
     public ResponseEntity<Article> getArticleById(@PathVariable("id") Integer id) {
+        LOGGER.info("ID is :" + id);
         Article article = articleService.getArticleById(id);
         return new ResponseEntity<Article>(article, HttpStatus.OK);
     }

@@ -1,7 +1,7 @@
 package com.streamtechnology.service;
 
-import com.streamtechnology.dao.ArticleDAO;
 import com.streamtechnology.entity.Article;
+import com.streamtechnology.repository.ArticleDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
