@@ -26,23 +26,15 @@ public class GrannyController extends AbstractController {
         return ResponseEntity.ok().build();
     }
 
-//    @GetMapping()
-//    public ResponseEntity<GrannyFlatDTO> getGranny() {
-//        return new ResponseEntity<GrannyFlatDTO>(getTmpGrannyFlatDTO(), HttpStatus.OK);
-//    }
-//
-    private GrannyFlatDTO getTmpGrannyFlatDTO() {
-        return new GrannyFlatDTO("Марія","Ящір","+3806793540971","07.08.1965",
-                "курю в ліжку", false,false,"femail","гаряча бабка","бо я реальна бабка","",
-        "хлоп, блондин","не курить","5",300,200.0,true,"",null,null, null);
-    }
 
     @GetMapping("/")
-    public ResponseEntity<List<GrannyFlatDTO>> getGrannys(@RequestParam("id") int id, @RequestParam("quantity") int number) {
+    @ResponseBody
+    public List<GrannyFlatDTO> getGrannys() {
         List<GrannyFlatDTO>  grannyFlatDTOs;
         grannyFlatDTOs = grannyService.getFullData();
 
-        return new ResponseEntity<List<GrannyFlatDTO>>(grannyFlatDTOs, HttpStatus.OK);
+
+        return grannyFlatDTOs;
     }
 
 }
