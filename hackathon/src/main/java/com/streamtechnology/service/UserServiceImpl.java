@@ -1,6 +1,8 @@
 package com.streamtechnology.service;
 
+import com.streamtechnology.entity.Granny;
 import com.streamtechnology.entity.User;
+import com.streamtechnology.entity.UserRole;
 import com.streamtechnology.repository.AddressRepository;
 import com.streamtechnology.repository.RoomDetailRepository;
 import com.streamtechnology.repository.UserRepository;
