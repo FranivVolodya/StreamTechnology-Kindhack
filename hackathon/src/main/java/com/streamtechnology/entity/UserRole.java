@@ -1,5 +1,5 @@
 package com.streamtechnology.entity;
 
-public enum  UserRoles {
+public enum UserRole {
     GRANNY,SUNNY
 }

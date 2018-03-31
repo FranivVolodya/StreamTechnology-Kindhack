@@ -1,6 +1,7 @@
 ALTER TABLE user_tb ADD COLUMN role character varying(20);
 ALTER TABLE user_tb ADD COLUMN phone character varying(100);
 ALTER TABLE user_tb ADD COLUMN email character varying(100);
+ALTER TABLE user_tb ADD COLUMN password character varying(100);
 
 ALTER TABLE user_tb ADD COLUMN data_of_birthday character varying(100);
 ALTER TABLE user_tb ADD COLUMN bad_habits character varying(1000);

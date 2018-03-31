@@ -33,6 +33,9 @@ public class User implements Serializable {
     @Column(name = "email")
     protected String email;
 
+    @Column(name = "password")
+    private String password;
+
     @Column(name = "data_of_birthday")
     protected String dateOfBirthday;
 
@@ -62,7 +65,7 @@ public class User implements Serializable {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
-    protected UserRoles userRoles;
+    private UserRole role;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -180,11 +183,11 @@ public class User implements Serializable {
         this.roomDetails = roomDetails;
     }
 
-    public UserRoles getUserRoles() {
-        return userRoles;
+    public UserRole getUserRoles() {
+        return role;
     }
 
-    public void setUserRoles(UserRoles userRoles) {
-        this.userRoles = userRoles;
+    public void setUserRoles(UserRole userRoles) {
+        this.role = role;
     }
 }
