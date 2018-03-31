@@ -5,6 +5,7 @@ Thumbs.db
 
 ## Directory-based project format:
 .idea/
+.DS_Store
 
 # Maven
 target/
@@ -12,4 +13,3 @@ target/
 # Folder with embedded server's logs
 /logs/
 
- 
