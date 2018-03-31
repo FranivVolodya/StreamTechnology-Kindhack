@@ -29,10 +29,8 @@ class HomePage extends Component {
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav navbar-right">
-                <li><div className="btn btn-primary btn-sm outline">Login</div></li>
-              </ul>
-              <ul className="nav navbar-nav navbar-right">
-                <li><a className="btn btn-primary btn-sm outline" href="/signin">Sign in</a></li>
+                <li><a className="nav-button">Login</a></li>
+                <li><a className="nav-button" href="/signin">Sign in</a></li>
               </ul>
             </div>
           </div>
@@ -40,26 +38,68 @@ class HomePage extends Component {
         <div className="liner">
           <div className="container-fluid home-background">
             <div className="container">
-              <div className="row">
-                <div className="col-md-6 col-md-offset-3">
+              <div className="row nav-description">
+                <div className="col-md-12">
                   <h1 className="title"> <span>Два покоління під одними дахом</span> </h1>
-                  <p className="description">Орендувати квартиру стало простіше!</p>
-                  <div className="button-wrapper">
-                    <a href="/sign-up" className="button--header blue">
-                      Create account
-                    </a>
-                    <div className="welcome--header--contact">
-                      <a href="/contact" className="button--header white-transparent">
-                        Contact Us
-                      </a>
-                    </div>
-                  </div>
+                  <h2 className="description">Орендувати квартиру стало простіше!</h2>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-8 col-md-offset-3">
+                  <h2 className="nav-phone">Зателефонуйте нам: +38(093)755 44 32</h2>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <div className="main">
+        <footer className="row">
+            <div className="col-sm-4">
+              <div className="information-wrapper">
+                <ul className="information">
+                  <li>
+                    <a href="#">
+                      <img src="../assets/images/logo_footer.svg" alt="" width="42" height="42"/>image
+                    </a>
+                  </li>
+                  <li>
+                    <p>м. Львів, вул. Івана Франка,  34
+                    тел: +38 (095) 44 55 678
+                    +38 (095) 44 55 678
+                    </p>
+                  </li>
+                  <li>2018 All Rights Reserved</li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-sm-4">
+              <ul className="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Правила</a></li>
+                <li><a href="">Контакти</a></li>
+              </ul>
+              <ul className="social center">
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+              </ul>
+            </div>
+            <div className="col-sm-4">
+              <div className="feedback-wrapper">
+                <ul className="feedback">
+                  <li><p><b>Новини</b></p></li>
+                  <li>
+                    <p>Підпишись на новини щоб отримати їх першими!</p>
+                  </li>
+                  <li><input type="text" placeholder="Enter Email"/><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
+                </ul>
+              </div>
+            </div>
+        </footer>
+      </div>
     </div>
 
   )

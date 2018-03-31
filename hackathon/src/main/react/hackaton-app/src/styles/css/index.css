@@ -60,16 +60,22 @@ body {
   .hero-section .title {
     font-family: "Roboto";
     color: #FFF;
-    font-weight: bold;
     text-align: center;
     font-size: 5em;
-    margin-bottom: 0.5em; }
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3); }
     .hero-section .title span {
       padding: 0 15px; }
   .hero-section .description {
     text-align: center;
-    font-size: 13px;
-    line-height: 24px; }
+    line-height: 24px;
+    color: #fff;
+    margin-top: 0.1em;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3); }
+  .hero-section .nav-phone {
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3); }
+  .hero-section .nav-description {
+    margin-bottom: 15em; }
 
 .liner {
   height: 650px;
@@ -160,8 +166,8 @@ body {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #3276b1;
-  border-color: #285e8e; }
+  background-color: #fff;
+  border-color: #fff; }
 
 /***********************
   OUTLINE BUTTONS
@@ -183,6 +189,16 @@ body {
   color: #fff;
   box-shadow: none; }
 
+.nav li a:hover {
+  background-color: transparent; }
+
+.nav li a {
+  border: solid 1px white;
+  color: #fff;
+  padding: 10px;
+  margin-top: 0.4em;
+  border-radius: 2px; }
+
 /******/
 .btn {
   margin-top: 10px;
@@ -197,5 +213,33 @@ body {
 
 .nav li {
   margin-left: 10px; }
+
+.main {
+  background-color: #f6f8fa;
+  color: #9b9da0; }
+
+.information, .menu, .social, .feedback {
+  list-style-type: none; }
+  .information a, .menu a, .social a, .feedback a {
+    text-decoration: none;
+    color: #9b9da0; }
+
+.menu li, .social li {
+  display: inline;
+  margin-left: 20px; }
+
+.information, .feedback {
+  font-size: 14px; }
+
+.information-wrapper {
+  width: 250px; }
+
+.feedback-wrapper {
+  widows: 240px; }
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000; }
 
 /*# sourceMappingURL=index.css.map */
