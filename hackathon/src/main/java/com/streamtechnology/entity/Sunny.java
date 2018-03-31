@@ -1,19 +1,12 @@
 package com.streamtechnology.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class Sunny {
+@Entity
+@DiscriminatorValue("SunnyUser")
+public class Sunny extends User {
     @Column(name = "work_study")
     private String workStudy;
 
@@ -25,4 +18,36 @@ public class Sunny {
 
     @Column(name = "have_mate")
     private String haveMate;
+
+    public String getWorkStudy() {
+        return workStudy;
+    }
+
+    public void setWorkStudy(String workStudy) {
+        this.workStudy = workStudy;
+    }
+
+    public String getWork_place() {
+        return work_place;
+    }
+
+    public void setWork_place(String work_place) {
+        this.work_place = work_place;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public String getHaveMate() {
+        return haveMate;
+    }
+
+    public void setHaveMate(String haveMate) {
+        this.haveMate = haveMate;
+    }
 }

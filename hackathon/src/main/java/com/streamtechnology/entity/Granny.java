@@ -1,16 +1,16 @@
 package com.streamtechnology.entity;
 
-import lombok.Builder;
-import lombok.Data;
-
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
-@Data
-@Builder
-public class Granny {
+@Entity
+@DiscriminatorValue("GrannyUser")
+public class Granny extends User{
 
+    public Granny (){
+
+    }
     @Column(name = "flat_mate_gender")
     private String flatMateGender;
 
@@ -22,4 +22,36 @@ public class Granny {
 
     @Column(name = "additional_requirements")
     private String additionalRequirements;
+
+    public String getFlatMateGender() {
+        return flatMateGender;
+    }
+
+    public void setFlatMateGender(String flatMateGender) {
+        this.flatMateGender = flatMateGender;
+    }
+
+    public String getFlatMateAge() {
+        return flatMateAge;
+    }
+
+    public void setFlatMateAge(String flatMateAge) {
+        this.flatMateAge = flatMateAge;
+    }
+
+    public String getFlatMateInfo() {
+        return flatMateInfo;
+    }
+
+    public void setFlatMateInfo(String flatMateInfo) {
+        this.flatMateInfo = flatMateInfo;
+    }
+
+    public String getAdditionalRequirements() {
+        return additionalRequirements;
+    }
+
+    public void setAdditionalRequirements(String additionalRequirements) {
+        this.additionalRequirements = additionalRequirements;
+    }
 }

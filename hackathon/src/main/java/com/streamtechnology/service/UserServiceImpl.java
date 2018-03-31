@@ -1,9 +1,6 @@
 package com.streamtechnology.service;
 
-import com.streamtechnology.entity.Address;
-import com.streamtechnology.entity.RoomDetails;
-import com.streamtechnology.entity.User;
-import com.streamtechnology.entity.UserRoles;
+import com.streamtechnology.entity.*;
 import com.streamtechnology.repository.AddressRepository;
 import com.streamtechnology.repository.RoomDetailRepository;
 import com.streamtechnology.repository.UserRepository;
@@ -24,12 +21,12 @@ public class UserServiceImpl implements UserServise {
         this.roomDetailRepository = roomDetailRepository;
     }
 
-    private User getUser() {
-        return User.builder()
-                .firstName("f")
-                .lastName("l")
-                .userRoles(UserRoles.GRANNY)
-                .build();
+    private Granny getUser() {
+        Granny granny = new Granny();
+        granny.setFirstName("d");
+        granny.setLastName("d");
+        granny.setUserRoles(UserRoles.GRANNY);
+        return granny;
     }
 
     @Transactional
