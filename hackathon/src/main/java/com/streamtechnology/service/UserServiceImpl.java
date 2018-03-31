@@ -1,27 +1,30 @@
 package com.streamtechnology.service;
 
+import com.streamtechnology.dto.UserDTO;
+import com.streamtechnology.dto.mappers.UserMapper;
 import com.streamtechnology.entity.User;
 import com.streamtechnology.entity.*;
 import com.streamtechnology.repository.AddressRepository;
+import com.streamtechnology.repository.GrannyRepository;
 import com.streamtechnology.repository.RoomDetailRepository;
 import com.streamtechnology.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserServise {
 
+    @Autowired
     private AddressRepository addressRepository;
+    @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private GrannyRepository grannyRepository;
+    @Autowired
     private RoomDetailRepository roomDetailRepository;
-
-    public UserServiceImpl(AddressRepository addressRepository, UserRepository userRepository,
-                           RoomDetailRepository roomDetailRepository) {
-        this.addressRepository = addressRepository;
-        this.userRepository = userRepository;
-        this.roomDetailRepository = roomDetailRepository;
-    }
 
     @Override
     public User getUserByEmail(String email) {
@@ -34,10 +37,14 @@ public class UserServiceImpl implements UserServise {
     }
 
     @Override
-    public User registerUser(User user) {
-        User existingUser = userRepository.findByEmail(user.getEmail());
+    public User registerUser(UserDTO userDTO) {
+        User existingUser = userRepository.findByEmail(userDTO.getEmail());
         if (existingUser == null) {
-            return userRepository.save(user);
+            if (UserRole.GRANNY.equals(userDTO.getUserRole())) {
+                return grannyRepository.saveAndFlush(UserMapper.toGranny(userDTO));
+            } else if (UserRole.SUNNY.equals(userDTO.getUserRole())) {
+
+            }
         }
         throw new RuntimeException("Such email already exists.");
     }
@@ -49,6 +56,6 @@ public class UserServiceImpl implements UserServise {
 
     @Override
     public List<Granny> getAllGranny() {
-        return userRepository.findAllByRole(UserRole.GRANNY);
+        return grannyRepository.findAllByUserRole(UserRole.GRANNY);
     }
 }

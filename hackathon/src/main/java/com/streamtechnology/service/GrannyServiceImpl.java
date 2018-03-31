@@ -1,12 +1,14 @@
 package com.streamtechnology.service;
 
 import com.streamtechnology.dto.GrannyFlatDTO;
+import com.streamtechnology.dto.UserDTO;
 import com.streamtechnology.entity.Address;
 import com.streamtechnology.entity.Granny;
 import com.streamtechnology.entity.RoomDetails;
 import com.streamtechnology.repository.GrannyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +28,7 @@ public class GrannyServiceImpl implements GrannyService {
     }
 
     @Override
+    @Transactional
     public List<GrannyFlatDTO> getFullData() {
         List<Granny> grannies = userServise.getAllGranny();
         List<GrannyFlatDTO>  grannyFlatDTOs = new ArrayList<>();

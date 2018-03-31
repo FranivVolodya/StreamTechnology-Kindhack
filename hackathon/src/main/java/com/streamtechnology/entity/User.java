@@ -65,7 +65,7 @@ public class User implements Serializable {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
-    private UserRole role;
+    private UserRole userRole;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -183,11 +183,11 @@ public class User implements Serializable {
         this.roomDetails = roomDetails;
     }
 
-    public UserRole getRole() {
-        return role;
+    public UserRole getUserRole() {
+        return userRole;
     }
 
-    public void setRole(UserRole role) {
-        this.role = role;
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
     }
 }

@@ -1,6 +1,7 @@
 package com.streamtechnology.service;
 
 import com.streamtechnology.dto.GrannyFlatDTO;
+import com.streamtechnology.dto.UserDTO;
 import com.streamtechnology.entity.Granny;
 
 import java.util.List;

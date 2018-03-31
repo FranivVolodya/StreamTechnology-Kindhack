@@ -16,7 +16,7 @@ public abstract class AbstractController {
     public void isAuthorized(UserRole role) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User account = userServise.getUserByEmail(auth.getName());
-        if (!account.getRole().equals(role)) {
+        if (!account.getUserRole().equals(role)) {
             throw new AuthorizationServiceException("User is not allows to access the service");
         }
 

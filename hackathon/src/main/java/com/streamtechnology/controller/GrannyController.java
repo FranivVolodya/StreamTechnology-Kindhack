@@ -1,6 +1,8 @@
 package com.streamtechnology.controller;
 
 import com.streamtechnology.dto.GrannyFlatDTO;
+import com.streamtechnology.dto.ShortAppartmentDescriptionDTO;
+import com.streamtechnology.entity.Address;
 import com.streamtechnology.entity.UserRole;
 import com.streamtechnology.service.GrannyService;
 import com.streamtechnology.service.mappers.GrannyMapper;
@@ -32,16 +34,41 @@ public class GrannyController extends AbstractController {
 //    }
 //
     private GrannyFlatDTO getTmpGrannyFlatDTO() {
-        return new GrannyFlatDTO("Марія","Ящір","+3806793540971","07.08.1965",
-                "курю в ліжку", false,false,"femail","гаряча бабка","бо я реальна бабка","",
-        "хлоп, блондин","не курить","5",300,200.0,true,"",null,null, null);
+        return new GrannyFlatDTO("Ім'я","Прізвище","+380670000000","07.08.1965",
+                "Немає", false,false,"Жінка","Полюбляю настільні ігри",
+                "Хочу допомогти студентам та веселіше проводити вечори :)","Чоловік/Жінка",
+        "Немає значення","Не курить, не вживає алкоголь","5",3,
+                200.0,true,"Прибирати у своїй кімнаті.",null,null,
+                null);
     }
 
+
+    @GetMapping("/all")
+    public ResponseEntity<List<ShortAppartmentDescriptionDTO>> getShortAppartmentDescriptions() {
+        List<ShortAppartmentDescriptionDTO>  grannyFlatDTOs = new ArrayList<>();
+        ShortAppartmentDescriptionDTO dto = new ShortAppartmentDescriptionDTO("Залізничний", "Затишна квартира", 56,
+                2, 250.0);
+        ShortAppartmentDescriptionDTO dto1 = new ShortAppartmentDescriptionDTO("Франківський", "Гарний район", 34,
+                3, 400.0);
+        grannyFlatDTOs.add(dto);
+        grannyFlatDTOs.add(dto1);
+        return new ResponseEntity<List<ShortAppartmentDescriptionDTO>>(grannyFlatDTOs, HttpStatus.OK);
+    }
+
+
+    @GetMapping("/all/full-info")
+    public ResponseEntity<List<GrannyFlatDTO>> getAllGrannys() {
+        List<GrannyFlatDTO>  grannyFlatDTOs = new ArrayList<>();
+        grannyFlatDTOs.add(getTmpGrannyFlatDTO());
+        grannyFlatDTOs.add(getTmpGrannyFlatDTO());
+        return new ResponseEntity<List<GrannyFlatDTO>>(grannyFlatDTOs, HttpStatus.OK);
+    }
+
+
     @GetMapping("/")
-    public ResponseEntity<List<GrannyFlatDTO>> getGrannys(@RequestParam("id") int id, @RequestParam("quantity") int number) {
+    public ResponseEntity<List<GrannyFlatDTO>> getGrannys() {
         List<GrannyFlatDTO>  grannyFlatDTOs;
         grannyFlatDTOs = grannyService.getFullData();
-
         return new ResponseEntity<List<GrannyFlatDTO>>(grannyFlatDTOs, HttpStatus.OK);
     }
 
