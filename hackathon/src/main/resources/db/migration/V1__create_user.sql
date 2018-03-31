@@ -2,11 +2,8 @@ CREATE TABLE user_tb (
   user_id bigserial primary key,
   first_name varchar(100) NOT NULL,
   last_name varchar(100) NOT NULL,
-  address INT NOT NULL,
   created TIMESTAMP  DEFAULT CURRENT_TIMESTAMP,
-  last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  CONSTRAINT address_fk FOREIGN KEY (address)   REFERENCES address_tb (address_id) MATCH SIMPLE
-  ON UPDATE NO ACTION ON DELETE CASCADE
+  last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE address_tb (
@@ -17,6 +14,9 @@ CREATE TABLE address_tb (
   zipcode      VARCHAR(100) NOT NULL,
   created TIMESTAMP  DEFAULT CURRENT_TIMESTAMP,
   last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  CONSTRAINT user_fd FOREIGN KEY (user_id)   REFERENCES user_tb (address_id) MATCH SIMPLE
-  ON UPDATE NO ACTION ON DELETE NO ACTION
+  CONSTRAINT address_user_fk FOREIGN KEY (user_id)   REFERENCES user_tb (user_id)
+   MATCH SIMPLE ON DELETE  CASCADE
 );
+
+
+

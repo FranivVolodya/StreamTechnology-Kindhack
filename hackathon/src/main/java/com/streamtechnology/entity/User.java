@@ -24,7 +24,6 @@ public class User implements Serializable {
 
     @Column(name = "last_name")
     private String lastName;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<Address> address;
 }

@@ -1,5 +1,6 @@
 package com.streamtechnology.repository;
 
+import com.streamtechnology.entity.Address;
 import com.streamtechnology.entity.User;
 import org.springframework.stereotype.Repository;
 
@@ -8,7 +9,8 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 @Repository
-public class UserDaoImpl implements UserDao {
+@Transactional
+public class UserDaoImpl  {
     @PersistenceContext
     private EntityManager entityManager;
 //    @Override
@@ -22,12 +24,10 @@ public class UserDaoImpl implements UserDao {
 //        return (List<Article>) entityManager.createQuery(hql).getResultList();
 //    }
 
-@Transactional
-@Override
-    public void addUser(User user) {
-        entityManager.persist(user);
-    }
-//    @Override
+
+
+
+    //    @Override
 //    public void updateArticle(Article article) {
 //        Article artcl = getArticleById(article.getArticleId());
 //        artcl.setTitle(article.getTitle());

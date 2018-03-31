@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Builder
 public class Address implements Serializable {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "address_id")
     private Integer addressId;
     @Column(name = "address_street",length=500)
@@ -22,7 +22,7 @@ public class Address implements Serializable {
     @Column(name = "zipcode", nullable = false, length=20)
     private String zipcode;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 

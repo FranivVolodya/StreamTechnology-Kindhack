@@ -1,11 +1,8 @@
 package com.streamtechnology.controller;
 
-import com.streamtechnology.entity.Address;
-import com.streamtechnology.entity.User;
 import com.streamtechnology.service.UserServise;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,37 +10,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Arrays;
-
 @RestController
 @RequestMapping("user")
 public class ArticleController {
     private final Logger LOGGER = LoggerFactory.getLogger(ArticleController.class);
-    @Autowired
     private UserServise userServise;
 
-    public ArticleController() {
-
+    public ArticleController(UserServise userServise) {
+        this.userServise = userServise;
     }
 
     @GetMapping("article/{id}")
     public ResponseEntity getArticleById(@PathVariable("id") Integer id) {
         LOGGER.info("ID is :" + id);
-        boolean iscreated = userServise.addUser(getUser());
+        boolean iscreated = userServise.saveUser(null);
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    private User getUser() {
-        return User.builder()
-                .firstName("f")
-                .lastName("l")
-                .address(Arrays.asList(Address.builder()
-                        .city("C")
-                        .street("s")
-                        .zipcode("s")
-                        .build()))
-                .build();
-    }
     //    @GetMapping("articles")
     //    public ResponseEntity<List<Article>> getAllArticles() {
     //        List<Article> list = articleService.getAllArticles();
