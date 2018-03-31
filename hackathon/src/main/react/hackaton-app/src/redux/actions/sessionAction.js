@@ -29,13 +29,13 @@ export function logInUser(email, password) {
   };
 }
 
-export function getAppartmentFromDb() {
+export function getApartment(jwt) {
   return function(dispatch) {
-    return sessionApi.getStartApartment().then(response => {
-      dispatch(getApartments(response));
+    return sessionApi.getStartApartment(jwt).then(response => {
+      console.log('RESPONSE', response)
+      // dispatch(getApartments(response));
     }).catch(error => {
       throw(error);
     });
   };
 }
-

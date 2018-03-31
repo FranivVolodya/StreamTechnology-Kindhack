@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getAppartmentFromDb } from '../../redux/actions/sessionAction';
+import { getApartment } from '../../redux/actions/sessionAction';
 import { logInUser } from '../../redux/actions/sessionAction';
 
 const mapStateToProps = (state) => ({
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
   getAppartment() {
-    dispatch(getAppartmentFromDb())
+    dispatch(getApartment())
   },
   login(email, password) {
     dispatch(logInUser(email, password))

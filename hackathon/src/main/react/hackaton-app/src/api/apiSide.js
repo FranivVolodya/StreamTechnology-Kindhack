@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 class SessionApi {
-  getStartApartment() {
-    const url = 'http://192.168.4.229:8090/granny';
+  getStartApartment(jwt) {
+    const url = 'http://192.168.4.236:8090/granny/all';
 
 
     return axios.get(url)
       .then(this.handleResponse.bind(this))
-      .catch(errors => console.log(errors));
+      .catch(errors => console.log('FUCK THIS SHIT', errors));
   }
 
   login(email, password) {
@@ -25,7 +25,6 @@ class SessionApi {
   }
 
   handleResponse(response) {
-    console.log(response.data);
     return response.data;
   }
   handleResponseStatus(response) {
