@@ -25,6 +25,31 @@ public class User implements Serializable {
     @Column(name = "last_name")
     private String lastName;
 
+    @Column(name = "phone")
+    private String phone;
+
+    @Column(name = "data_of_birthday")
+    private String dateOfBirthday;
+
+    @Column(name = "bad_habits")
+    private String badHabits;
+
+    @Column(name = "animal")
+    private boolean animal;
+
+    @Column(name = "domestic_help")
+    private boolean domesticHelp;
+
+    @Column(name = "gender")
+    private String gender;
+
+    @Column(name = "info_about_me")
+    private String infoAboutMe;
+
+    @Column(name = "why_I_want_to_be_here")
+    private String whyIWantToBeHere;
+
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private List<Address> address;
 }
