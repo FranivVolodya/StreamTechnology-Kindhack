@@ -49,6 +49,6 @@ public class UserServiceImpl implements UserServise {
 
     @Override
     public List<Granny> getAllGranny() {
-        return userRepository.findAllByUserRoles(UserRole.GRANNY);
+        return userRepository.findAllByRole(UserRole.GRANNY);
     }
 }

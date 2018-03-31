@@ -31,6 +31,10 @@ public class GrannyFlatDTO {
     private boolean readyDomesticHelp;
     private String domesticHelpInfo;
 
+    public GrannyFlatDTO() {
+
+    }
+
     public String getFirstName() {
         return firstName;
     }

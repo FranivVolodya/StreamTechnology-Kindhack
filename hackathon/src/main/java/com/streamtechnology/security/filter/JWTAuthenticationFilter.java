@@ -1,6 +1,7 @@
 package com.streamtechnology.security.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.streamtechnology.security.SecurityConstants;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -53,6 +54,11 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .signWith(SignatureAlgorithm.HS512, SECRET.getBytes())
                 .compact();
-        res.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
+//        res.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
+        res.setStatus(HttpServletResponse.SC_OK);
+        res.getWriter().write("{\""+ SecurityConstants.TOKEN_PREFIX +"\":\"" + token + "\"}");
+        res.getWriter().flush();
+        res.getWriter().close();
     }
+
 }
