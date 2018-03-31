@@ -8,8 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.List;
 
-@Entity
-@Table(name = "room_details_tb")
+//@Entity
+//@Table(name = "room_details_tb")
 @Data
 @Builder
 public class RoomDetails {

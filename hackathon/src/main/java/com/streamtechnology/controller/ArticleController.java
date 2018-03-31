@@ -1,6 +1,8 @@
 package com.streamtechnology.controller;
 
+import com.streamtechnology.entity.User;
 import com.streamtechnology.service.UserServise;
+import com.streamtechnology.wrapper.UserInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -24,7 +26,15 @@ public class ArticleController {
     public ResponseEntity getArticleById(@PathVariable("id") Integer id) {
         LOGGER.info("ID is :" + id);
         boolean iscreated = userServise.saveUser(null);
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity( HttpStatus.CREATED);
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity getUser(@PathVariable("id") Integer id) {
+        LOGGER.info("ID is :" + id);
+        User usesr = userServise.getUser(id);
+        UserInfo info =  new UserInfo();
+        return new ResponseEntity(info, HttpStatus.OK);
     }
 
     //    @GetMapping("articles")

@@ -2,6 +2,7 @@ package com.streamtechnology.service;
 
 import com.streamtechnology.entity.Address;
 import com.streamtechnology.entity.User;
+import com.streamtechnology.entity.UserRoles;
 import com.streamtechnology.repository.AddressRepository;
 import com.streamtechnology.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,7 @@ public class UserServiceImpl implements UserServise{
         return User.builder()
                 .firstName("f")
                 .lastName("l")
+                .userRoles(UserRoles.GRANNY)
                 .build();
     }
 
@@ -39,5 +41,10 @@ public class UserServiceImpl implements UserServise{
         userRepository.save(user);
         addressRepository.save(address);
         return true;
+    }
+
+    @Override
+    public User getUser(Integer userId) {
+        return userRepository.findOne(userId);
     }
 }

@@ -1,7 +1,9 @@
 package com.streamtechnology.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,6 +13,8 @@ import java.util.List;
 @Table(name = "user_tb")
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class User implements Serializable {
     private static final long serialVersionUID = -4455863780196120817L;
 
@@ -27,6 +31,9 @@ public class User implements Serializable {
 
     @Column(name = "phone")
     private String phone;
+
+    @Column(name = "email")
+    private String email;
 
     @Column(name = "data_of_birthday")
     private String dateOfBirthday;
@@ -49,7 +56,10 @@ public class User implements Serializable {
     @Column(name = "why_I_want_to_be_here")
     private String whyIWantToBeHere;
 
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<Address> address;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private UserRoles userRoles;
 }

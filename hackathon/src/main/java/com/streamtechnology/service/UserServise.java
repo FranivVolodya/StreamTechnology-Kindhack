@@ -6,5 +6,5 @@ import org.springframework.transaction.annotation.Transactional;
 public interface UserServise {
      boolean saveUser(User u);
 
-
+    User getUser(Integer id);
 }
