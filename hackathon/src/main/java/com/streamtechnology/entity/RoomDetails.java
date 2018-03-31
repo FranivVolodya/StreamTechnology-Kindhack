@@ -38,7 +38,7 @@ public class RoomDetails {
     private boolean domesticHelp;
 
     @Column(name = "domestic_help_info")
-    private boolean domesticHelpInfo;
+    private String domesticHelpInfo;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)

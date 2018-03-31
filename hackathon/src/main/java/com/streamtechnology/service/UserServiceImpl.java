@@ -7,6 +7,8 @@ import com.streamtechnology.repository.RoomDetailRepository;
 import com.streamtechnology.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserServise {
 
@@ -43,5 +45,10 @@ public class UserServiceImpl implements UserServise {
     @Override
     public User getUser(Long userId) {
         return userRepository.findOne(userId);
+    }
+
+    @Override
+    public List<Granny> getAllGranny() {
+        return userRepository.findAllByUserRoles(UserRole.GRANNY);
     }
 }

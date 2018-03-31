@@ -24,12 +24,12 @@ public class GrannyFlatDTO {
     private String flatMateAge;
     private String flatMateInfo;
     private String additionalRequirements;
-    private List<String> photo;
-    private String matesNumber;
-    private List<String> benefits;
-    private Long rentPrice;
+    private String photo;
+    private int matesNumber;
+    private String benefits;
+    private Double rentPrice;
     private boolean readyDomesticHelp;
-    private boolean domesticHelpInfo;
+    private String domesticHelpInfo;
 
     public String getFirstName() {
         return firstName;
@@ -151,35 +151,35 @@ public class GrannyFlatDTO {
         this.additionalRequirements = additionalRequirements;
     }
 
-    public List<String> getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(List<String> photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 
-    public String getMatesNumber() {
+    public int getMatesNumber() {
         return matesNumber;
     }
 
-    public void setMatesNumber(String matesNumber) {
+    public void setMatesNumber(int matesNumber) {
         this.matesNumber = matesNumber;
     }
 
-    public List<String> getBenefits() {
+    public String getBenefits() {
         return benefits;
     }
 
-    public void setBenefits(List<String> benefits) {
+    public void setBenefits(String benefits) {
         this.benefits = benefits;
     }
 
-    public Long getRentPrice() {
+    public Double getRentPrice() {
         return rentPrice;
     }
 
-    public void setRentPrice(Long rentPrice) {
+    public void setRentPrice(Double rentPrice) {
         this.rentPrice = rentPrice;
     }
 
@@ -191,11 +191,11 @@ public class GrannyFlatDTO {
         this.readyDomesticHelp = readyDomesticHelp;
     }
 
-    public boolean isDomesticHelpInfo() {
+    public String getDomesticHelpInfo() {
         return domesticHelpInfo;
     }
 
-    public void setDomesticHelpInfo(boolean domesticHelpInfo) {
+    public void setDomesticHelpInfo(String domesticHelpInfo) {
         this.domesticHelpInfo = domesticHelpInfo;
     }
 
@@ -204,8 +204,8 @@ public class GrannyFlatDTO {
                          boolean domesticHelp, String gender, String infoAboutMe,
                          String whyIWantToBeHere,  String flatMateGender,
                          String flatMateAge, String flatMateInfo, String additionalRequirements,
-                         String matesNumber, Long rentPrice, boolean readyDomesticHelp, boolean domesticHelpInfo,
-                         List<Address> address, List<String> benefits, List<String> photo) {
+                         int matesNumber, Double rentPrice, boolean readyDomesticHelp, String domesticHelpInfo,
+                         List<Address> address, String benefits, String photo) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
