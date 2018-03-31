@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Modal from 'react-modal';
+import { Redirect } from 'react-router';
 import logo from '../../asserts/images/logo.svg';
 import quote from '../../asserts/images/quote.png';
 import girl from '../../asserts/images/people-2.png';
@@ -12,15 +14,65 @@ import benefitOne from '../../asserts/images/benefitOne.png';
 import benefitTwo from '../../asserts/images/benefitTwo.png';
 import benefitThree from '../../asserts/images/benefitThree.png';
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
 class HomePage extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+
+    this.state = {
+      modalIsOpen: false,
+      email: '',
+      password: '',
+    };
+
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
-  componentWillMount() {
-    this.props.getAppartment();
+  // componentWillMount() {
+  //   this.props.getAppartment();
+  // }
+
+  handleChange(e) {
+    const {name, value} = e.target;
+    this.setState({[name]: value});
   }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const {email, password} = this.state;
+    this.props.login(email, password);
+    // this.props.login(email, password);
+  }
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
   render() {
     console.log('PROPS IN HOME PAGE', this.props);
+    const {email, password,  } = this.state;
+
+    console.log('REDIRECT', this.props.redirect);
+
+    if (this.props.redirect === 200) {
+      return <Redirect to="/profile" />;
+    }
+
   return (
     <div>
 
@@ -40,12 +92,54 @@ class HomePage extends Component {
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav navbar-right">
-                <li><a className="nav-button">Login</a></li>
+                <li><a className="nav-button" onClick={this.openModal}>Login</a></li>
                 <li><a className="nav-button" href="/signin">Sign in</a></li>
               </ul>
             </div>
           </div>
         </nav>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+
+          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
+          <button onClick={this.closeModal}>close</button>
+          <div>I am a modal</div>
+          <form id="login-form" name="form" onSubmit={e => this.handleSubmit(e)}>
+            <fieldset>
+              <div className="form-group">
+                <div className="row">
+                  <div className="col-md-12">
+                    <input type="email" className="form-control" name="email"
+                           value={email} id="email" onChange={this.handleChange} required/>
+                    <label htmlFor="email" className="labels">Email</label>
+                  </div>
+                </div>
+              </div>
+              <div className="form-group">
+                <div className="row">
+                  <div className="col-md-12">
+                    <input type="password" className="form-control" id="password"
+                           name="password" value={password} onChange={this.handleChange} required/>
+                    <label htmlFor="password" className="labels">Password</label>
+                    <a className="show-hide-button">
+                      <i className="fa fa-eye" aria-hidden="true"/>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div className="text-center">
+              <button type="submit" value="Submit" className="button--header blue">
+                Login
+              </button>
+            </div>
+          </form>
+        </Modal>
         <div className="liner">
           <div className="container-fluid home-background">
             <div className="container">
@@ -210,10 +304,10 @@ class HomePage extends Component {
               <li><a href="">Контакти</a></li>
             </ul>
             <ul className="social center">
-              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="#"><i className="fab fa-facebook"></i></a></li>
+              <li><a href="#"><i className="fab fa-facebook"></i></a></li>
+              <li><a href="#"><i className="fab fa-facebook"></i></a></li>
+              <li><a href="#"><i className="fab fa-facebook"></i></a></li>
             </ul>
           </div>
           <div className="col-sm-4">
