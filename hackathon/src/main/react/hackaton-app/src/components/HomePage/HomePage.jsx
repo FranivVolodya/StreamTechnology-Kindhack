@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../../asserts/images/logo.svg';
+import quote from '../../asserts/images/quote.png';
+import girl from '../../asserts/images/people-2.png';
 import partnersOne from '../../asserts/images/Bitmap.png';
 import partnersTwo from '../../asserts/images/Bitmap2.png';
 import partnersThree from '../../asserts/images/Bitmap3.png';
@@ -150,6 +152,36 @@ class HomePage extends Component {
         </div>
       </section>
 
+      <section className="all-simple">
+        <div className="container">
+          <div className="row">
+            <p className="main-title">НАМ ДОВІРЯЮТЬ</p>
+          <p className="subtitle">УСПІШНІ ІСТОРІЇ</p>
+          </div>
+          <div className="row">
+            <div className="col-md-4">
+              <div className="face-icon">
+                <img className="img-circle" src={girl} alt=""/>
+                <p><span className="student-name">АННА ВЕЛЮС</span></p>
+                <p><span className="student">Студент</span></p>
+              </div>
+            </div>
+            <div className="col-md-8">
+              <div className="quote">
+                <div className="row">
+                  <div className="quote-icon pull-left">
+                    <img src={quote} alt=""/>
+                  </div>
+                </div>
+                <div className="quote-text">
+                  <p>Цей сервіс був порятунком у пошуку житла, так як у наданні гуртожитка мені відмовили.
+                    До сих пір спілкуюся із власницею навіть після того, як стала на ноги фінансово й живу окремо.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div className="main">
         <footer className="row">
@@ -158,7 +190,7 @@ class HomePage extends Component {
               <ul className="information">
                 <li>
                   <a href="#">
-                    <img src="../assets/images/logo_footer.svg" alt="" width="42" height="42"/>image
+                    <img src={logo} alt="" width="98" height="45"/>
                   </a>
                 </li>
                 <li>

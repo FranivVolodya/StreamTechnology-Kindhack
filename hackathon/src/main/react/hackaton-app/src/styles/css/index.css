@@ -287,4 +287,33 @@ input {
   border: none;
   border-bottom: 1px solid #000000; }
 
+.quote {
+  widows: 750px;
+  height: 250px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5); }
+  .quote p {
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1.43;
+    letter-spacing: 0.5px;
+    text-align: left;
+    padding-left: 0.5em;
+    margin-top: 0px; }
+
+.face-icon {
+  font-size: 12px; }
+  .face-icon p {
+    margin-bottom: 0px; }
+  .face-icon img {
+    width: 201px;
+    height: 201px; }
+  .face-icon .student {
+    color: #f5a623;
+    font-size: 16px; }
+
+.quote-icon {
+  margin-top: 15px;
+  margin-left: 30px; }
+
 /*# sourceMappingURL=index.css.map */
