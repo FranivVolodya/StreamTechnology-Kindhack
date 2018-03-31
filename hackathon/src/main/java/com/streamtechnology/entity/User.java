@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -58,14 +59,23 @@ public class User implements Serializable {
     protected String whyIWantToBeHere;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    protected List<Address> address;
+    protected List<Address> address = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    protected List<RoomDetails> roomDetails;
+    protected List<RoomDetails> roomDetails = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private UserRole role;
+
+    @PrePersist
+    private void prePersist(){
+        //hack to make possible on Controller take address and rooms
+        this.getAddress().forEach(address1 ->
+                address1.setUser(this));
+        this.getRoomDetails().forEach(address1 ->
+                address1.setUser(this));
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
