@@ -12,27 +12,31 @@ class HomePage extends Component {
     console.log('PROPS IN HOME PAGE', this.props);
   return (
     <div>
-      <nav className="navbar">
-        <div className="container">
-          <div className="navbar-header">
-            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span className="sr-only">Toggle navigation</span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-            </button>
-            <a className="navbar-brand" href="#">
-              <img className="logo-image" src={logo} alt="" />
-            </a>
-          </div>
-          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul className="nav navbar-nav navbar-right">
-              <li><a className="sign-in" href="/signin">Sign in</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+
       <section className="hero-section">
+        <nav className="navbar">
+          <div className="container">
+            <div className="navbar-header">
+              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span className="sr-only">Toggle navigation</span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+              </button>
+              <a className="navbar-brand" href="#">
+                <img className="logo-image" src={logo} alt="" />
+              </a>
+            </div>
+            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul className="nav navbar-nav navbar-right">
+                <li><div className="btn btn-primary btn-sm outline">Login</div></li>
+              </ul>
+              <ul className="nav navbar-nav navbar-right">
+                <li><a className="btn btn-primary btn-sm outline" href="/signin">Sign in</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
         <div className="liner">
           <div className="container-fluid home-background">
             <div className="container">
@@ -56,9 +60,7 @@ class HomePage extends Component {
           </div>
         </div>
       </section>
-      <div>
-      </div>
-  </div>
+    </div>
 
   )
   }
