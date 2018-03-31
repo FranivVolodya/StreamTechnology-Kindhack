@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
 import logo from '../../asserts/images/logo.svg';
+import partnersOne from '../../asserts/images/Bitmap.png';
+import partnersTwo from '../../asserts/images/Bitmap2.png';
+import partnersThree from '../../asserts/images/Bitmap3.png';
+import profil from '../../asserts/images/profil.svg';
+import owner from '../../asserts/images/owner.svg';
+import enjoyCompany from '../../asserts/images/enjoy-company.svg';
+import benefitOne from '../../asserts/images/benefitOne.png';
+import benefitTwo from '../../asserts/images/benefitTwo.png';
+import benefitThree from '../../asserts/images/benefitThree.png';
 
 class HomePage extends Component {
   constructor(props) {
@@ -53,51 +62,139 @@ class HomePage extends Component {
           </div>
         </div>
       </section>
+      <section className="partners">
+        <div className="row">
+          <div className="parents-list">
+            <div><img src={partnersOne} alt=""/></div>
+            <div><img src={partnersTwo} alt=""/></div>
+            <div><img src={partnersThree} alt=""/></div>
+            <div><img src={partnersOne} alt=""/></div>
+          </div>
+        </div>
+      </section>
+      <section className="all-simple">
+        <div className="container">
+          <div className="row">
+            <p className="main-title">Все просто</p>
+            <p className="subtitle">Як це працює?</p>
+          </div>
+          <div className="row">
+            <div className="all-simple-images">
+              <div className="col-md-4">
+                <div><img src={profil} alt=""/>
+                <p className="description">
+                  Створи<br />
+                  профіль
+                </p></div>
+              </div>
+              <div className="col-md-4">
+                <div><img src={owner} alt=""/>
+                  <p className="description">
+                    Зв’яжись<br />
+                    із власником
+                  </p>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div><img src={enjoyCompany} alt=""/>
+                  <p className="description">
+                    Насолоджуйтесь
+                    компанією
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="all-simple">
+        <div className="container">
+          <div className="row">
+            <p className="main-title">ЛИШЕ НАЙКРАЩЕ</p>
+            <p className="subtitle">ПЕРЕВАГИ</p>
+          </div>
+          <div className="row">
+            <div className="all-simple-images">
+              <div className="col-md-4">
+                <div><img src={benefitOne} alt=""/>
+                  <p className="description">
+                    ПРОСТОТА<br />
+                    У КОРИСТУВАННІ
+                  </p></div>
+              </div>
+              <div className="col-md-4">
+                <div><img src={benefitTwo} alt=""/>
+                  <p className="description">
+                    ЮРИДИЧНИЙ<br />
+                    ЗАХИСТ
+                  </p>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div><img src={benefitThree} alt=""/>
+                  <p className="description">
+                    БЮДЖЕТНІСТЬ
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="few-appartments">
+        <div className="container">
+          <div className="row">
+            <p className="main-title">ГАРЯЧІ ПРОПОЗИЦІЇ</p>
+            <p className="subtitle"> КВАРТИРИ ПО  УСЬОМУ ЛЬВОВУ</p>
+          </div>
+        </div>
+      </section>
+
 
       <div className="main">
         <footer className="row">
-            <div className="col-sm-4">
-              <div className="information-wrapper">
-                <ul className="information">
-                  <li>
-                    <a href="#">
-                      <img src="../assets/images/logo_footer.svg" alt="" width="42" height="42"/>image
-                    </a>
-                  </li>
-                  <li>
-                    <p>м. Львів, вул. Івана Франка,  34
+          <div className="col-sm-4">
+            <div className="information-wrapper">
+              <ul className="information">
+                <li>
+                  <a href="#">
+                    <img src="../assets/images/logo_footer.svg" alt="" width="42" height="42"/>image
+                  </a>
+                </li>
+                <li>
+                  <p>м. Львів, вул. Івана Франка,  34
                     тел: +38 (095) 44 55 678
                     +38 (095) 44 55 678
-                    </p>
-                  </li>
-                  <li>2018 All Rights Reserved</li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-sm-4">
-              <ul className="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Правила</a></li>
-                <li><a href="">Контакти</a></li>
-              </ul>
-              <ul className="social center">
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                  </p>
+                </li>
+                <li>2018 All Rights Reserved</li>
               </ul>
             </div>
-            <div className="col-sm-4">
-              <div className="feedback-wrapper">
-                <ul className="feedback">
-                  <li><p><b>Новини</b></p></li>
-                  <li>
-                    <p>Підпишись на новини щоб отримати їх першими!</p>
-                  </li>
-                  <li><input type="text" placeholder="Enter Email"/><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
-                </ul>
-              </div>
+          </div>
+          <div className="col-sm-4">
+            <ul className="menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Правила</a></li>
+              <li><a href="">Контакти</a></li>
+            </ul>
+            <ul className="social center">
+              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            </ul>
+          </div>
+          <div className="col-sm-4">
+            <div className="feedback-wrapper">
+              <ul className="feedback">
+                <li><p><b>Новини</b></p></li>
+                <li>
+                  <p>Підпишись на новини щоб отримати їх першими!</p>
+                </li>
+                <li><input type="text" placeholder="Enter Email"/><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
+              </ul>
             </div>
+          </div>
         </footer>
       </div>
     </div>
