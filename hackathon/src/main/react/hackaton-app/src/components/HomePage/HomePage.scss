@@ -1,0 +1,118 @@
+.navbar-fixed-top {
+  .navbar-brand {
+    padding: 5px 15px;
+    .logo-image {
+      height: 35px;
+      margin-top: 5px;
+    }
+  }
+  .navbar-right li a {
+    color: #8898aa;
+    &:hover,
+    &:focus {
+      background: none;
+
+    }
+  }
+  .navbar-toggle .icon-bar {
+    background-color: #454552;
+  }
+  .sign-in {
+    &:after {
+      font: normal 11px StripeIcons;
+      content: '\279E';
+      padding-left: 5px;
+    }
+  }
+}
+
+.hero-section {
+  width: 100%;
+  min-height: 650px;
+  overflow: hidden;
+  transform-origin: 0;
+  background-image: url('./../../asserts/images/Bitmap.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  .title {
+    font-family: "Roboto";
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+    font-size: 5em;
+    margin-bottom: 0.5em;
+    span {
+      padding: 0 15px;
+    }
+  }
+  .description {
+    text-align: center;
+    font-size: 13px;
+    line-height: 24px;
+  }
+}
+.liner {
+  height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.feature-image-one {
+  height: 100%;
+  width: 100%;
+}
+.button-wrapper {
+  margin-top: 30px;
+  min-height: 80px;
+  text-align: center;
+  .welcome--header--contact {
+    display: inline-block;
+  }
+  .blue {
+    margin: 5px;
+  }
+  .blue:hover {
+    bottom: 2px;
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+    transition: all 0.05s ease-in-out;
+  }
+  .white-transparent {
+    background-color: #fff;
+    border: 0px solid #fff;
+    padding: 16px 28px;
+    color: #4ea1d3;
+    text-transform: uppercase;
+    margin: 5px;
+  }
+  .white-transparent:hover {
+    bottom: 2px;
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+    transition: all 0.05s ease-in-out;
+    text-decoration: none;
+  }
+}
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px) {
+  .hero-section {
+    .title {
+      font-size: 3.5em;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar {
+    background-color: #fff;
+  }
+  .navbar-toggle .icon-bar {
+    background-color: black;
+  }
+  nav ul li a {
+    color: #919fa3 !important;
+  }
+  .navbar-brand {
+    color: #919fa3;
+  }
+}
