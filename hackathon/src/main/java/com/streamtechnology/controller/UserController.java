@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("user")
-public class ArticleController {
-    private final Logger LOGGER = LoggerFactory.getLogger(ArticleController.class);
+public class UserController {
+    private final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
     private UserServise userServise;
 
-    public ArticleController(UserServise userServise) {
+    public UserController(UserServise userServise) {
         this.userServise = userServise;
     }
 
@@ -26,14 +26,14 @@ public class ArticleController {
     public ResponseEntity getArticleById(@PathVariable("id") Integer id) {
         LOGGER.info("ID is :" + id);
         boolean iscreated = userServise.saveUser(null);
-        return new ResponseEntity( HttpStatus.CREATED);
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 
     @GetMapping("{id}")
     public ResponseEntity getUser(@PathVariable("id") Integer id) {
         LOGGER.info("ID is :" + id);
         User usesr = userServise.getUser(id);
-        UserInfo info =  new UserInfo();
+        UserInfo info = new UserInfo();
         return new ResponseEntity(info, HttpStatus.OK);
     }
 

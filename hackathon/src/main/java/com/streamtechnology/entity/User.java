@@ -56,8 +56,11 @@ public class User implements Serializable {
     @Column(name = "why_I_want_to_be_here")
     private String whyIWantToBeHere;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<Address> address;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<RoomDetails> roomDetails;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
