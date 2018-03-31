@@ -1,11 +1,11 @@
 package com.streamtechnology.service;
 
+import com.streamtechnology.entity.User;
 import com.streamtechnology.entity.*;
 import com.streamtechnology.repository.AddressRepository;
 import com.streamtechnology.repository.RoomDetailRepository;
 import com.streamtechnology.repository.UserRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserServiceImpl implements UserServise {
@@ -21,38 +21,27 @@ public class UserServiceImpl implements UserServise {
         this.roomDetailRepository = roomDetailRepository;
     }
 
-    private Granny getUser() {
-        Granny granny = new Granny();
-        granny.setFirstName("d");
-        granny.setLastName("d");
-        granny.setUserRoles(UserRoles.GRANNY);
-        return granny;
-    }
-
-    @Transactional
     @Override
-    public boolean saveUser(User u) {
-        User user = getUser();
-        Address address = Address.builder()
-                .city("C")
-                .street("s")
-                .zipcode("s")
-                .user(user)
-                .build();
-        RoomDetails roomDetails = new RoomDetails();
-        roomDetails.setBenefits("sa");
-        roomDetails.setDomesticHelp(true);
-        roomDetails.setMatesNumber(5);
-        roomDetails.setUser(user);
-
-        userRepository.save(user);
-        addressRepository.save(address);
-        roomDetailRepository.save(roomDetails);
-        return true;
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 
     @Override
-    public User getUser(Integer userId) {
+    public User getUser(Integer id) {
+        return null;
+    }
+
+    @Override
+    public User registerUser(User user) {
+        User existingUser = userRepository.findByEmail(user.getEmail());
+        if (existingUser == null) {
+            return userRepository.save(user);
+        }
+        throw new RuntimeException("Such email already exists.");
+    }
+
+    @Override
+    public User getUser(Long userId) {
         return userRepository.findOne(userId);
     }
 }
