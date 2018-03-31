@@ -6,7 +6,7 @@ CREATE TABLE room_details_tb (
   benefits VARCHAR(150),
   rent_price double precision,
   domestic_help  BOOLEAN ,
-  domestic_help_info  BOOLEAN,
+  domestic_help_info  VARCHAR(1000),
   CONSTRAINT address_user_fk FOREIGN KEY (user_id)   REFERENCES user_tb (user_id)
    MATCH SIMPLE ON DELETE  CASCADE
 );

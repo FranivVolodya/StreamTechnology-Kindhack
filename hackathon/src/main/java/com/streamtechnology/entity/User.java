@@ -193,11 +193,11 @@ public class User implements Serializable {
         this.roomDetails = roomDetails;
     }
 
-    public UserRole getUserRoles() {
+    public UserRole getRole() {
         return role;
     }
 
-    public void setUserRoles(UserRole userRoles) {
+    public void setRole(UserRole role) {
         this.role = role;
     }
 }
