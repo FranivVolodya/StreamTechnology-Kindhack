@@ -167,10 +167,10 @@ class HomePage extends Component {
       <section className="partners">
         <div className="row">
           <div className="parents-list">
-            <div><img src={partnersOne} alt=""/></div>
-            <div><img src={partnersTwo} alt=""/></div>
-            <div><img src={partnersThree} alt=""/></div>
-            <div><img src={partnersOne} alt=""/></div>
+            <div><a href="#"><img src={partnersOne} alt=""/></a></div>
+            <div><a href="#"><img src={partnersTwo} alt=""/></a></div>
+            <div><a href="#"><img src={partnersThree} alt=""/></a></div>
+            <div><a href="#"><img src={partnersOne} alt=""/></a></div>
           </div>
         </div>
       </section>
