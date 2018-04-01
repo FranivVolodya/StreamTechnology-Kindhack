@@ -255,6 +255,8 @@ body {
     margin-top: 15px; }
   .all-simple .all-simple-images {
     margin-top: 50px; }
+  .all-simple .sussecc-story {
+    margin-top: 50px; }
 
 .few-appartments {
   background-color: #f6f8fa; }
@@ -359,7 +361,8 @@ input {
 .few-appartments {
   text-align: center;
   margin-bottom: 50px;
-  background-color: #f6f8fa; }
+  background-color: #f6f8fa;
+  padding-bottom: 30px; }
   .few-appartments .main-title {
     opacity: 0.33;
     font-size: 60px;
@@ -376,9 +379,15 @@ input {
     letter-spacing: -0.9px;
     text-align: center;
     color: #000000; }
+  .few-appartments .see-more {
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #787575;
+    margin-bottom: 30px; }
 
 .main-wrapper {
-  margin-top: 4em; }
+  margin-top: 3em; }
 
 .apartment-image {
   width: 100%;
@@ -459,5 +468,8 @@ input {
     margin-top: 1em; }
   .main .social li a:hover {
     color: #ffa900; }
+
+.footer {
+  padding-top: 40px; }
 
 /*# sourceMappingURL=index.css.map */

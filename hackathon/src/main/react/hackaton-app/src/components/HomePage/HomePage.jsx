@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 import { Redirect } from 'react-router';
+import ApartmentBody from '../Apartment/ApartmentBody';
 import logo from '../../asserts/images/logo.svg';
 import quote from '../../asserts/images/quote.png';
 import girl from '../../asserts/images/people-2.png';
@@ -13,6 +14,7 @@ import enjoyCompany from '../../asserts/images/enjoy-company.svg';
 import benefitOne from '../../asserts/images/benefitOne.png';
 import benefitTwo from '../../asserts/images/benefitTwo.png';
 import benefitThree from '../../asserts/images/benefitThree.png';
+import apartImage from '../../asserts/images/flat1.png';
 import Footer from '../Footer/Footer';
 
 const customStyles = {
@@ -40,9 +42,9 @@ class HomePage extends Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-  // componentWillMount() {
-  //   this.props.getAppartment();
-  // }
+  componentWillMount() {
+    this.props.getApartment();
+  }
 
   handleChange(e) {
     const {name, value} = e.target;
@@ -65,6 +67,8 @@ class HomePage extends Component {
   }
 
   render() {
+    const {data} = this.props;
+    console.log('DATA ON HOME PAGE', data);
     console.log('PROPS IN HOME PAGE', this.props);
     const {email, password,  } = this.state;
 
@@ -163,10 +167,10 @@ class HomePage extends Component {
       <section className="partners">
         <div className="row">
           <div className="parents-list">
-            <div><a href="#"><img src={partnersOne} alt=""/></a></div>
-            <div><a href="#"><img src={partnersTwo} alt=""/></a></div>
-            <div><a href=""><img src={partnersThree} alt=""/></a></div>
-            <div><a href=""><img src={partnersOne} alt=""/></a></div>
+            <div><img src={partnersOne} alt=""/></div>
+            <div><img src={partnersTwo} alt=""/></div>
+            <div><img src={partnersThree} alt=""/></div>
+            <div><img src={partnersOne} alt=""/></div>
           </div>
         </div>
       </section>
@@ -245,6 +249,26 @@ class HomePage extends Component {
             <p className="main-title">ГАРЯЧІ ПРОПОЗИЦІЇ</p>
             <p className="subtitle"> КВАРТИРИ ПО  УСЬОМУ ЛЬВОВУ</p>
           </div>
+          <div className="row">
+            <div className="main-wrapper">
+              {Object.keys(data).slice(0, 3).map(key => (
+                <div className="col-md-4">
+                  <ApartmentBody
+                    key={key}
+                    src={apartImage}
+                    district={data[key].region}
+                    description={data[key].description}
+                    metrs={data[key].meters}
+                    rooms={data[key].rooms}
+                    price={data[key].price}
+                  />
+                </div>
+              ))}
+            </div>
+            <div>
+              <a className="see-more" onClick={this.openModal} >Показати все</a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -254,7 +278,7 @@ class HomePage extends Component {
             <p className="main-title">НАМ ДОВІРЯЮТЬ</p>
           <p className="subtitle">УСПІШНІ ІСТОРІЇ</p>
           </div>
-          <div className="row">
+          <div className="row sussecc-story">
             <div className="col-md-4">
               <div className="face-icon">
                 <img className="img-circle" src={girl} alt=""/>

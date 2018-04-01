@@ -3,7 +3,7 @@ import logo from '../../asserts/images/logo.svg';
 
 const Footer = () => {
 
-    return (<div className="main">
+    return (<div className="main footer">
       <footer className="row">
         <div className="col-sm-4">
           <div className="information-wrapper">

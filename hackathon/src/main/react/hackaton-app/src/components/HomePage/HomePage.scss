@@ -273,6 +273,9 @@ and (max-device-width: 667px) {
   .all-simple-images {
     margin-top: 50px;
   }
+  .sussecc-story {
+    margin-top: 50px;
+  }
 }
 .few-appartments {
   background-color: #f6f8fa;
@@ -399,6 +402,7 @@ input {
   text-align: center;
   margin-bottom: 50px;
   background-color: #f6f8fa;
+  padding-bottom: 30px;
   .main-title {
     opacity: 0.33;
     font-size: 60px;
@@ -417,4 +421,12 @@ input {
     text-align: center;
     color: #000000;
   }
+  .see-more {
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #787575;
+    margin-bottom: 30px;
+  }
 }
+

@@ -3,6 +3,7 @@ import ApartmentBody from './ApartmentBody';
 import './Apartment';
 import apartImage from '../../asserts/images/flat1.png';
 import './Apartment.scss';
+import Footer from '../Footer/Footer';
 
 class Apartment extends Component {
   constructor(props) {
@@ -51,6 +52,7 @@ class Apartment extends Component {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
   }

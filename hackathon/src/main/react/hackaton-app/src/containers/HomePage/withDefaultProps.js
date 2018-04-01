@@ -6,11 +6,12 @@ const mapStateToProps = (state) => ({
   testData: state.homePage.data,
   apartments: state.homePage.apartments,
   redirect: state.homePage.redirect,
+  data: state.homePage.data,
 });
 
 const mapDispatchToProps = dispatch => ({
-  getAppartment() {
-    dispatch(getApartment())
+  getApartment(jwt) {
+    dispatch(getApartment(jwt))
   },
   login(email, password) {
     dispatch(logInUser(email, password))
