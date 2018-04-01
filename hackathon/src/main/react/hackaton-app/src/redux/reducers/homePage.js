@@ -3,9 +3,7 @@ import {
   LOG_IN_SUCCESS,
 } from '../constants/ourconstants';
 const defaultState = {
-  data: {
-    test: 'from state'
-  },
+  data: {},
   apartments: {
 
   },
@@ -15,9 +13,10 @@ const defaultState = {
 const homePage = (state = defaultState, action) => {
   switch (action.type) {
     case GET_APARTMENTS: {
+      console.log('ACTION DATA REDUCER', action.data)
       const updateApartments = action.data;
 
-      return { ...state, apartments: updateApartments, };
+      return { ...state, data: updateApartments, };
     }
 
     case LOG_IN_SUCCESS: {
