@@ -105,9 +105,10 @@ class HomePage extends Component {
           contentLabel="Example Modal"
         >
 
-          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-          <button onClick={this.closeModal}>close</button>
-          <div>I am a modal</div>
+          <div className="modal-logo">
+            <img className="logo-image" src={logo} alt="" />
+          </div>
+          {/*<button onClick={this.closeModal}>close</button>*/}
           <form id="login-form" name="form" onSubmit={e => this.handleSubmit(e)}>
             <fieldset>
               <div className="form-group">
@@ -134,7 +135,7 @@ class HomePage extends Component {
               </div>
             </fieldset>
             <div className="text-center">
-              <button type="submit" value="Submit" className="button--header blue">
+              <button type="submit" value="Submit" className="login-button">
                 Login
               </button>
             </div>
