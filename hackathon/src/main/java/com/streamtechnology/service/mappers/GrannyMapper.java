@@ -31,6 +31,7 @@ public class GrannyMapper {
         granny.setFlatMateAge(grannyFlatDTO.getFlatMateAge());
         granny.setFlatMateInfo(grannyFlatDTO.getFlatMateInfo());
         granny.setAdditionalRequirements(grannyFlatDTO.getAdditionalRequirements());
+        granny.setEmail(grannyFlatDTO.getEmail());
         RoomDetails roomDetails = new RoomDetails();
         roomDetails.setPhotos(grannyFlatDTO.getPhoto());
         roomDetails.setMatesNumber(grannyFlatDTO.getMatesNumber());
@@ -40,6 +41,22 @@ public class GrannyMapper {
         roomDetails.setDomesticHelpInfo(grannyFlatDTO.getDomesticHelpInfo());
         granny.setRoomDetails(Arrays.asList(roomDetails));
         return granny;
+    }
+
+    public static void copy(Granny updatedGranny, Granny existingGranny) {
+        existingGranny.setFirstName(updatedGranny.getFirstName());
+        existingGranny.setLastName(updatedGranny.getLastName());
+        existingGranny.setPhone(updatedGranny.getPhone());
+        existingGranny.setDateOfBirthday(updatedGranny.getDateOfBirthday());
+        existingGranny.setAnimal(updatedGranny.isAnimal());
+        existingGranny.setDomesticHelp(updatedGranny.isDomesticHelp());
+        existingGranny.setGender(updatedGranny.getGender());
+        existingGranny.setInfoAboutMe(updatedGranny.getInfoAboutMe());
+        existingGranny.setWhyIWantToBeHere(updatedGranny.getWhyIWantToBeHere());
+        existingGranny.setFlatMateGender(updatedGranny.getFlatMateGender());
+        existingGranny.setFlatMateAge(updatedGranny.getFlatMateAge());
+        existingGranny.setFlatMateInfo(updatedGranny.getFlatMateInfo());
+        existingGranny.setAdditionalRequirements(updatedGranny.getAdditionalRequirements());
     }
 
 }

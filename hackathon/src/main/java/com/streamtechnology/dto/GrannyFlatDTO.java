@@ -9,6 +9,7 @@ import java.util.List;
 
 public class GrannyFlatDTO {
 
+    private String email;
     private String firstName;
     private String lastName;
     private String phone;
@@ -30,6 +31,14 @@ public class GrannyFlatDTO {
     private Double rentPrice;
     private boolean readyDomesticHelp;
     private String domesticHelpInfo;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public GrannyFlatDTO() {
 

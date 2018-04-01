@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface GrannyService {
 
-    void addProfileInfo(Granny granny);
+    void updateProfileInfo(Granny granny);
 
     GrannyFlatDTO getProfileInfo(String email);
 

@@ -22,9 +22,9 @@ public class PropertyController extends AbstractController {
     private GrannyService grannyService;
 
     @PostMapping("/update-profile-info")
-    public ResponseEntity addProfileInfo(@RequestBody GrannyFlatDTO grannyFlatDTO) {
-        isAuthorized(UserRole.GRANNY);
-        grannyService.addProfileInfo(GrannyMapper.map(grannyFlatDTO));
+    public ResponseEntity updateProfileInfo(@RequestBody GrannyFlatDTO grannyFlatDTO) {
+//        isAuthorized(UserRole.GRANNY);
+        grannyService.updateProfileInfo(GrannyMapper.map(grannyFlatDTO));
         return ResponseEntity.ok().build();
     }
 
