@@ -36,11 +36,25 @@ class HomePage extends Component {
       modalIsOpen: false,
       email: '',
       password: '',
-    };
+      firstName: '',
+      lastName:'',
+      modalSecondIsOpen: false,
+      sunny: '',
+      granny: '',
+      redirect: false,
+      secondRedirect: false,
+  };
 
     this.openModal = this.openModal.bind(this);
+    this.openModalSecond = this.openModalSecond.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.closeModalSecond = this.closeModalSecond.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmitSignUp = this.handleSubmitSignUp.bind(this);
+    this.handleChangeSingUp = this.handleChangeSingUp.bind(this);
+
+    this.onStudentChanged = this.onStudentChanged.bind(this);
+    this.onGrannyChanged = this.onGrannyChanged.bind(this);
   }
   componentWillMount() {
     this.props.getApartment();
@@ -51,28 +65,74 @@ class HomePage extends Component {
     this.setState({[name]: value});
   }
 
+  onStudentChanged(e) {
+    const name = e.target.name;
+    this.setState(prevState => ({
+      sunny: name
+    }));
+  };
+
+  onGrannyChanged(e) {
+    const granny = e.target.name;
+    this.setState({
+      granny: granny
+    });
+  };
+
+
+
+  handleChangeSingUp(e) {
+    const {name, value} = e.target;
+    this.setState({[name]: value});
+    const {email, password, firstName, lastName, sunny}  = this.state;
+
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const {email, password} = this.state;
+    // this.setState({redirectSecond: true});
     this.props.login(email, password);
-    // this.props.login(email, password);
+  }
+
+  handleSubmitSignUp(e) {
+    e.preventDefault();
+    const {email, password, firstName, lastName, sunny, granny} = this.state;
+    // this.props.signUp(email, password, firstName, lastName, sunny);
+    this.setState({redirect: true});
+    console.log('ALLL I NEED_________', email, password, firstName, lastName, sunny, granny);
+
   }
 
   openModal() {
     this.setState({modalIsOpen: true});
   }
 
+  openModalSecond() {
+    this.setState({modalSecondIsOpen: true});
+  }
+
   closeModal() {
     this.setState({modalIsOpen: false});
+  }
+
+  closeModalSecond() {
+    this.setState({modalSecondIsOpen: false});
   }
 
   render() {
     const {data} = this.props;
     console.log('DATA ON HOME PAGE', data);
     console.log('PROPS IN HOME PAGE', this.props);
-    const {email, password,  } = this.state;
+    const {email, password, firstName, lastName, sunny, granny } = this.state;
 
-    console.log('REDIRECT', this.props.redirect);
+    if (this.state.redirect) {
+      return <Redirect to="/profile" />;
+    }
+
+    // if (this.state.redirectSecond === true) {
+    //   return <Redirect to="/profile" />;
+    // }
 
     if (this.props.redirect === 200) {
       return <Redirect to="/profile" />;
@@ -98,7 +158,7 @@ class HomePage extends Component {
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav navbar-right">
                 <li><a className="nav-button" onClick={this.openModal}>Login</a></li>
-                <li><a className="nav-button" href="/signin">Sign in</a></li>
+                <li><a className="nav-button" onClick={this.openModalSecond}>Sign in</a></li>
               </ul>
             </div>
           </div>
@@ -303,6 +363,80 @@ class HomePage extends Component {
         </div>
       </section>
       <Footer />
+      <Modal
+        isOpen={this.state.modalSecondIsOpen}
+        onRequestClose={this.closeModalSecond}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+
+        <div className="modal-logo">
+          <img className="logo-image" src={logo} alt="" />
+        </div>
+        <h2>SIGN UP</h2>
+        <form id="login-form" name="form" onSubmit={e => this.handleSubmitSignUp(e)}>
+          <fieldset>
+            <div className="form-group">
+              <div className="row">
+                <div className="col-md-12">
+                  <input type="text" className="form-control" name="firstName"
+                         value={firstName} id="firstName" onChange={this.handleChangeSingUp} required/>
+                  <label htmlFor="firstName" className="labels">FirstName</label>
+                </div>
+              </div>
+            </div>
+            <div className="form-group">
+              <div className="row">
+                <div className="col-md-12">
+                  <input type="text" className="form-control" name="lastName"
+                         value={lastName} id="lastName" onChange={this.handleChangeSingUp} required/>
+                  <label htmlFor="lastName" className="labels">LastName</label>
+                </div>
+              </div>
+            </div>
+            <div className="form-group">
+              <div className="row">
+                <div className="col-md-12">
+                  <input type="email" className="form-control" name="email"
+                         value={email} id="email" onChange={this.handleChangeSingUp} required/>
+                  <label htmlFor="email" className="labels">Email</label>
+                </div>
+              </div>
+            </div>
+            <div className="form-group">
+              <div className="row">
+                <div className="col-md-12">
+                  <input type="password" className="form-control" id="password"
+                         name="password" value={password} onChange={this.handleChangeSingUp} required/>
+                  <label htmlFor="password" className="labels">Password</label>
+                  <a className="show-hide-button">
+                    <i className="fa fa-eye" aria-hidden="true"/>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+
+            <div className="form-group">
+              <div className="row">
+                <input type="radio" name="SUNNY" value={sunny} onChange={this.onStudentChanged}/>
+                <label htmlFor="SUNNY">Student</label>
+              </div>
+              <div className="row">
+                <input type="radio" name="GRANNY" value={granny} onChange={this.onGrannyChanged}/>
+                <label htmlFor="GRANNY">GrandParent</label>
+              </div>
+            </div>
+
+          </fieldset>
+
+          <div className="text-center">
+            <button type="submit" value="Submit" className="login-button">
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </Modal>
     </div>
 
   )

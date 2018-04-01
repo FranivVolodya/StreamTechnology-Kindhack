@@ -48,3 +48,16 @@ export function getApartment(jwt) {
     });
   };
 }
+
+export function signUpUser(email, password, firstName, lastName, sunny) {
+  return function(dispatch) {
+    return sessionApi.signUp(email, password, firstName, lastName, sunny).then(response => {
+      if (response.status === 200) {
+        // dispatch(loginSuccess(response));
+      }
+      console.log('Login FAILED');
+    }).catch(error => {
+      throw(error);
+    });
+  };
+}

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { getApartment } from '../../redux/actions/sessionAction';
 import { logInUser } from '../../redux/actions/sessionAction';
+import { signUpUser } from '../../redux/actions/sessionAction';
 
 const mapStateToProps = (state) => ({
   testData: state.homePage.data,
@@ -15,6 +16,9 @@ const mapDispatchToProps = dispatch => ({
   },
   login(email, password) {
     dispatch(logInUser(email, password))
+  },
+  signUp(email, password, firstName, lastName, sunny) {
+    dispatch(signUpUser(email, password, firstName, lastName, sunny))
   },
 });
 
