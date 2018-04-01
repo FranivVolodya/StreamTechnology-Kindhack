@@ -42,6 +42,8 @@ body {
   color: #8898aa; }
   .navbar-fixed-top .navbar-right li a:hover, .navbar-fixed-top .navbar-right li a:focus {
     background: none; }
+.navbar-fixed-top .navbar-right li:hover {
+  background-color: red; }
 .navbar-fixed-top .navbar-toggle .icon-bar {
   background-color: #454552; }
 .navbar-fixed-top .sign-in:after {
@@ -358,6 +360,15 @@ input {
     top: 6px;
     cursor: pointer; }
 
+.nav-button {
+  cursor: pointer; }
+
+.nav-button:hover {
+  color: #ffa900; }
+
+.nav li a:hover {
+  border: solid 1px #ffa900; }
+
 .few-appartments {
   text-align: center;
   margin-bottom: 50px;
@@ -384,7 +395,8 @@ input {
     letter-spacing: -0.5px;
     text-align: center;
     color: #787575;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    cursor: pointer; }
 
 .main-wrapper {
   margin-top: 4em; }
@@ -480,8 +492,24 @@ input {
     margin-top: 1em; }
   .main .social li a:hover {
     color: #ffa900; }
+  .main .social li {
+    margin-left: 3em; }
+  .main .feedback li a:hover {
+    color: #ffa900; }
+  .main .feedback input:focus {
+    outline: none !important;
+    border-bottom: solid 1px #ffa900; }
+  .main .menu li a:hover {
+    color: #ffa900; }
 
 .footer {
   padding-top: 40px; }
+
+.form {
+  border: solid 1px #9b9da0;
+  padding: 1em; }
+
+.form-btn {
+  border: solid 1px #9b9da0; }
 
 /*# sourceMappingURL=index.css.map */

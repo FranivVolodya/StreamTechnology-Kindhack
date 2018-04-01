@@ -16,8 +16,10 @@
     &:hover,
     &:focus {
       background: none;
-
     }
+  }
+  .navbar-right li:hover {
+    background-color: red;
   }
   .navbar-toggle .icon-bar {
     background-color: #454552;
@@ -397,7 +399,15 @@ input {
     }
   }
 }
-
+.nav-button {
+  cursor: pointer;
+}
+.nav-button:hover {
+  color: #ffa900;
+}
+.nav li a:hover {
+  border: solid 1px #ffa900;
+}
 .few-appartments {
   text-align: center;
   margin-bottom: 50px;
@@ -427,6 +437,6 @@ input {
     text-align: center;
     color: #787575;
     margin-bottom: 30px;
+    cursor: pointer;
   }
 }
-

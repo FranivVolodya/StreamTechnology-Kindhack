@@ -35,6 +35,19 @@
   .social li a:hover {
     color: #ffa900;
   }
+  .social li {
+    margin-left: 3em;
+  }
+  .feedback li a:hover {
+    color: #ffa900;
+  }
+  .feedback input:focus {
+    outline:none !important;
+    border-bottom: solid 1px #ffa900;
+  }
+  .menu li a:hover {
+    color: #ffa900;
+  }
 }
 
 .footer {
