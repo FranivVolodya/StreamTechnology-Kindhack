@@ -13,4 +13,6 @@ public interface GrannyRepository extends JpaRepository<Granny, Long> {
 
     List<Granny> findAllByUserRole(UserRole role);
 
+    Granny findByEmail(String email);
+
 }

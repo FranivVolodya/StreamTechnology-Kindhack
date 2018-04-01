@@ -11,6 +11,8 @@ public interface GrannyService {
 
     void addProfileInfo(Granny granny);
 
+    GrannyFlatDTO getProfileInfo(String email);
+
     List<GrannyFlatDTO> getFullData();
 
     List<PropertyBasicDTO> getRestrictedData();

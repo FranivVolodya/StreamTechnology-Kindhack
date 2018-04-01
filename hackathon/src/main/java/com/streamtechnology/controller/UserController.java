@@ -29,7 +29,7 @@ public class UserController {
         return "OK";
     }
 
-    @GetMapping("/whoami")
+    @GetMapping("/who-am-i")
     public Object user() {
         return SecurityContextHolder.getContext()
                 .getAuthentication();

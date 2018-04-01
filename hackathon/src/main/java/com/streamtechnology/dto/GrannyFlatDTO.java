@@ -233,4 +233,26 @@ public class GrannyFlatDTO {
         this.domesticHelpInfo = domesticHelpInfo;
     }
 
+    public GrannyFlatDTO(String firstName, String lastName, String phone,
+                         String dateOfBirthday, String badHabits, boolean animal,
+                         boolean domesticHelp, String gender, String infoAboutMe,
+                         String whyIWantToBeHere,  String flatMateGender,
+                         String flatMateAge, String flatMateInfo, String additionalRequirements) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.dateOfBirthday = dateOfBirthday;
+        this.badHabits = badHabits;
+        this.animal = animal;
+        this.domesticHelp = domesticHelp;
+        this.gender = gender;
+        this.infoAboutMe = infoAboutMe;
+        this.whyIWantToBeHere = whyIWantToBeHere;
+        this.address = address;
+        this.flatMateGender = flatMateGender;
+        this.flatMateAge = flatMateAge;
+        this.flatMateInfo = flatMateInfo;
+        this.additionalRequirements = additionalRequirements;
+    }
+
 }

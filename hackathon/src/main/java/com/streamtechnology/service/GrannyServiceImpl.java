@@ -30,6 +30,18 @@ public class GrannyServiceImpl implements GrannyService {
     }
 
     @Override
+    public GrannyFlatDTO getProfileInfo(String email) {
+        Granny granny = grannyRepository.findByEmail(email);
+        if (granny == null) {
+            throw new RuntimeException("No such email found");
+        }
+        return new GrannyFlatDTO(granny.getFirstName(), granny.getLastName(), granny.getPhone(), granny.getDateOfBirthday(),
+                granny.getBadHabits(), granny.isAnimal(), granny.isDomesticHelp(), granny.getGender(), granny.getInfoAboutMe(),
+                granny.getWhyIWantToBeHere(), granny.getFlatMateGender(), granny.getFlatMateAge(), granny.getFlatMateInfo(),
+                granny.getAdditionalRequirements());
+    }
+
+    @Override
     @Transactional
     public List<GrannyFlatDTO> getFullData() {
         List<Granny> grannies = userServise.getAllGranny();
