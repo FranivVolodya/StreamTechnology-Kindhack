@@ -1,12 +1,5 @@
 package com.streamtechnology.dto;
 
-import com.streamtechnology.entity.Address;
-
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-import java.util.List;
-
 public class GrannyFlatDTO {
 
     private String email;
