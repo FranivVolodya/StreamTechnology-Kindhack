@@ -1,6 +1,6 @@
 package com.streamtechnology.dto;
 
-public class ShortAppartmentDescriptionDTO {
+public class PropertyBasicDTO {
 
     private String region;
     private String description;
@@ -8,11 +8,11 @@ public class ShortAppartmentDescriptionDTO {
     private Integer rooms;
     private Double price;
 
-    public ShortAppartmentDescriptionDTO() {
+    public PropertyBasicDTO() {
 
     }
 
-    public ShortAppartmentDescriptionDTO(String region, String description, Integer meters, Integer rooms, Double price) {
+    public PropertyBasicDTO(String region, String description, Integer meters, Integer rooms, Double price) {
         this.region = region;
         this.description = description;
         this.meters = meters;

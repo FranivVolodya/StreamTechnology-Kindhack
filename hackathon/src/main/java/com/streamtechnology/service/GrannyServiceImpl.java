@@ -1,6 +1,7 @@
 package com.streamtechnology.service;
 
 import com.streamtechnology.dto.GrannyFlatDTO;
+import com.streamtechnology.dto.PropertyBasicDTO;
 import com.streamtechnology.dto.UserDTO;
 import com.streamtechnology.entity.Address;
 import com.streamtechnology.entity.Granny;
@@ -12,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class GrannyServiceImpl implements GrannyService {
@@ -47,8 +49,27 @@ public class GrannyServiceImpl implements GrannyService {
     }
 
     @Override
-    public List<GrannyFlatDTO> getRestrictedData() {
-        return null;
+    public List<PropertyBasicDTO> getRestrictedData() {
+        List<Granny> grannies = userServise.getAllGranny();
+        List<PropertyBasicDTO> propetyDtos = new ArrayList<>();
+        for (Granny granny: grannies){
+            PropertyBasicDTO basicDTO = new PropertyBasicDTO();
+            if (!granny.getRoomDetails().isEmpty()) {
+                RoomDetails roomDetails = granny.getRoomDetails().get(0);
+                basicDTO.setRooms(roomDetails.getMatesNumber());
+                basicDTO.setPrice(roomDetails.getRentPrice());
+                basicDTO.setDescription(roomDetails.getDomesticHelpInfo());
+                basicDTO.setMeters(30 + new Random(20).nextInt());
+                if (!granny.getAddress().isEmpty()) {
+                    Address address = granny.getAddress().get(0);
+                    basicDTO.setRegion(address.getCity());
+                }
+                propetyDtos.add(basicDTO);
+            }
+
+
+        }
+        return propetyDtos;
     }
 
 }

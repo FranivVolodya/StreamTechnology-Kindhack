@@ -1,6 +1,7 @@
 package com.streamtechnology.service;
 
 import com.streamtechnology.dto.GrannyFlatDTO;
+import com.streamtechnology.dto.PropertyBasicDTO;
 import com.streamtechnology.dto.UserDTO;
 import com.streamtechnology.entity.Granny;
 
@@ -12,6 +13,6 @@ public interface GrannyService {
 
     List<GrannyFlatDTO> getFullData();
 
-    List<GrannyFlatDTO> getRestrictedData();
+    List<PropertyBasicDTO> getRestrictedData();
 
 }
