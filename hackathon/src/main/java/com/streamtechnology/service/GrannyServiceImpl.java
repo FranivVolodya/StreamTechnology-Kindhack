@@ -1,12 +1,16 @@
 package com.streamtechnology.service;
 
+import com.streamtechnology.dto.AddRoomDTO;
 import com.streamtechnology.dto.GrannyFlatDTO;
 import com.streamtechnology.dto.PropertyBasicDTO;
 import com.streamtechnology.dto.UserDTO;
+import com.streamtechnology.dto.mappers.RoomMapper;
 import com.streamtechnology.entity.Address;
 import com.streamtechnology.entity.Granny;
 import com.streamtechnology.entity.RoomDetails;
 import com.streamtechnology.repository.GrannyRepository;
+import com.streamtechnology.repository.RoomDetailRepository;
+import com.streamtechnology.service.mappers.GrannyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,11 +26,31 @@ public class GrannyServiceImpl implements GrannyService {
     GrannyRepository grannyRepository;
 
     @Autowired
+    RoomDetailRepository roomDetailRepository;
+
+    @Autowired
     UserServise userServise;
 
     @Override
-    public void addProfileInfo(Granny granny) {
-        grannyRepository.saveAndFlush(granny);
+    @Transactional
+    public void updateProfileInfo(Granny updatedGranny) {
+        Granny existingGranny = grannyRepository.findByEmail(updatedGranny.getEmail());
+        if (existingGranny == null) {
+            throw new RuntimeException("No such email found");
+        }
+        GrannyMapper.copy(updatedGranny, existingGranny);
+    }
+
+    @Override
+    @Transactional
+    public void addRoom(AddRoomDTO addRoomDTO) {
+        Granny existingGranny = grannyRepository.findByEmail(addRoomDTO.getEmail());
+        if (existingGranny == null) {
+            throw new RuntimeException("No such email found");
+        }
+        RoomDetails roomDetails = RoomMapper.map(addRoomDTO);
+        roomDetails.setUser(existingGranny);
+        roomDetailRepository.save(roomDetails);
     }
 
     @Override

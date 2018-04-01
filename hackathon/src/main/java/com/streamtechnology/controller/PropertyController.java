@@ -1,5 +1,6 @@
 package com.streamtechnology.controller;
 
+import com.streamtechnology.dto.AddRoomDTO;
 import com.streamtechnology.dto.GrannyFlatDTO;
 import com.streamtechnology.entity.UserRole;
 import com.streamtechnology.service.GrannyService;
@@ -22,9 +23,16 @@ public class PropertyController extends AbstractController {
     private GrannyService grannyService;
 
     @PostMapping("/update-profile-info")
-    public ResponseEntity addProfileInfo(@RequestBody GrannyFlatDTO grannyFlatDTO) {
-        isAuthorized(UserRole.GRANNY);
-        grannyService.addProfileInfo(GrannyMapper.map(grannyFlatDTO));
+    public ResponseEntity updateProfileInfo(@RequestBody GrannyFlatDTO grannyFlatDTO) {
+//        isAuthorized(UserRole.GRANNY);
+        grannyService.updateProfileInfo(GrannyMapper.map(grannyFlatDTO));
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/add-room")
+    public ResponseEntity addRoom(@RequestBody AddRoomDTO addRoomDTO) {
+//        isAuthorized(UserRole.GRANNY);
+        grannyService.addRoom(addRoomDTO);
         return ResponseEntity.ok().build();
     }
 

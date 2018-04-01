@@ -1,6 +1,7 @@
 import {
   GET_APARTMENTS,
   LOG_IN_SUCCESS,
+    LOG_IN_FAIL,
 } from '../constants/ourconstants';
 import sessionApi from '../../api/apiSide';
 
@@ -13,14 +14,22 @@ export const loginSuccess = (data) => ({
   type: LOG_IN_SUCCESS,
   data
 });
+export const loginFailed = (data) => ({
+    type: LOG_IN_FAIL,
+    data
+});
 
 export function logInUser(email, password) {
   return function(dispatch) {
     return sessionApi.login(email, password).then(response => {
-      if (response.status === 200) {
+      if (response && response.status === 200) {
         console.log('RESPONSE DATA', response.data);
         localStorage.setItem('jwt', response.data.JWT);
         dispatch(loginSuccess(response));
+      }else {
+          alert("Please check your password or email");
+          var badTry = {message: "Please try again"};
+          dispatch(loginFailed(badTry));
       }
       console.log('Login FAILED');
     }).catch(error => {
