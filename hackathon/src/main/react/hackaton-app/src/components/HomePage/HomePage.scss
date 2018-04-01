@@ -245,7 +245,7 @@ and (max-device-width: 667px) {
   margin-bottom: 50px;
   .main-title {
     opacity: 0.33;
-    font-size: 82px;
+    font-size: 60px;
     margin-top: 50px;
     font-weight: bold;
     letter-spacing: -2px;
@@ -277,37 +277,144 @@ and (max-device-width: 667px) {
 .few-appartments {
   background-color: #f6f8fa;
 }
-.main {
-  background-color: #f6f8fa;
-  color: #9b9da0;
-}
-.information, .menu, .social, .feedback {
-  list-style-type: none;
-  a {
-    text-decoration: none;
-    color: #9b9da0;
-  }
-}
-
-.menu li, .social li {
-  display: inline;
-  margin-left: 20px;
-}
-
-.information, .feedback {
-  font-size: 14px;
-}
-
-.information-wrapper {
-  width: 250px;
-}
-
-.feedback-wrapper {
-  widows: 240px;
-}
 
 input {
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
+}
+
+.quote {
+  widows: 750px;
+  height: 230px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  p {
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 1.43;
+    letter-spacing: 0.5px;
+    text-align: left;
+    padding-left: 0.5em;
+    margin-top: 0.3em;
+  }
+}
+.face-icon {
+  font-size: 12px;
+  p {
+    margin-bottom: 0px;
+  }
+  img {
+    width: 201px;
+    height: 201px;
+  }
+  .student {
+    color: #f5a623;
+    font-size: 16px;
+  }
+}
+
+.quote-icon {
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
+.modal-logo {
+  text-align: center;
+  margin-bottom: 25px;
+}
+#login-form {
+  width: 260px;
+  .login-button {
+    width: 114px;
+    color: #fff;
+    height: 42px;
+    border-radius: 4px;
+    background-color: #f5a623;
+    outline: none;
+  }
+  .form-group {
+    .form-control {
+      border: 2px solid rgba(136,152,170, 0.4);
+      border-radius: 2px;
+      margin-bottom: 7px;
+      box-shadow: none;
+      font-family: "Roboto";
+      &:focus {
+        border-color: #f5a623;
+        opacity: 1;
+      }
+      &:focus + .labels,
+      &:valid + .labels {
+        font-size: 0.7em;
+        padding: 0 0.3em;
+        top: 0;
+        background: white;
+        font-weight: 500;
+        color: #f5a623;
+        z-index: 1;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+    }
+    .form-control::-webkit-input-placeholder  {
+      color: #8898aa;
+      font-family: "Roboto";
+      font-size: 12px;
+      font-weight: 300;
+    }
+    .required-input {
+      margin-top: -6px;
+      margin-bottom: 0px;
+
+      font-size: 10px;
+      font-family: "Roboto";
+    }
+    .labels {
+      position: absolute;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-family: "Roboto";
+      color: #757575;
+      top: 10px;
+      font-size: 0.7em;
+      letter-spacing: 0.5px;
+      background: white;
+      left: 30px;
+      transition: all 0.2s ease;
+      cursor: text;
+    }
+    .show-hide-button {
+      position: absolute;
+      right: 30px;
+      top: 6px;
+      cursor: pointer;
+    }
+  }
+}
+
+.few-appartments {
+  text-align: center;
+  margin-bottom: 50px;
+  background-color: #f6f8fa;
+  .main-title {
+    opacity: 0.33;
+    font-size: 60px;
+    margin-top: 50px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    text-align: center;
+    color: #ffa900;
+    text-transform: uppercase;
+  }
+  .subtitle {
+    font-size: 30px;
+    margin-top: -50px;
+    text-transform: uppercase;
+    letter-spacing: -0.9px;
+    text-align: center;
+    color: #000000;
+  }
 }

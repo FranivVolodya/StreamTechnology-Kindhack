@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HomePage from '../containers/HomePage/HomePage';
-import Profile from '../components/Profile/Profile';
+import Apartment from '../containers/Apartment/Apartment';
 import { Route, Redirect, Switch } from 'react-router-dom';
 
 class PrimaryLayout extends Component {
@@ -9,7 +9,7 @@ class PrimaryLayout extends Component {
       <main>
         <Switch>
           <Route path="/" exact component={HomePage}/>
-          <Route path="/profile" exact component={Profile}/>
+          <Route path="/profile" exact component={Apartment}/>
           <Redirect to="/"/>
         </Switch>
       </main>

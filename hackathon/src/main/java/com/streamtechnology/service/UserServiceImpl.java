@@ -1,18 +1,21 @@
 package com.streamtechnology.service;
 
+import com.streamtechnology.entity.Granny;
 import com.streamtechnology.dto.UserDTO;
 import com.streamtechnology.dto.mappers.UserMapper;
 import com.streamtechnology.entity.User;
-import com.streamtechnology.entity.*;
+import com.streamtechnology.entity.UserRole;
 import com.streamtechnology.repository.AddressRepository;
 import com.streamtechnology.repository.GrannyRepository;
 import com.streamtechnology.repository.RoomDetailRepository;
 import com.streamtechnology.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserServise {
@@ -58,4 +61,5 @@ public class UserServiceImpl implements UserServise {
     public List<Granny> getAllGranny() {
         return grannyRepository.findAllByUserRole(UserRole.GRANNY);
     }
+
 }

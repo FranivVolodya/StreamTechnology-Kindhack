@@ -19,7 +19,7 @@ public class GrannyFlatDTO {
     private String gender;
     private String infoAboutMe;
     private String whyIWantToBeHere;
-    private List<Address> address;
+    private String address;
     private String flatMateGender;
     private String flatMateAge;
     private String flatMateInfo;
@@ -115,11 +115,11 @@ public class GrannyFlatDTO {
         this.whyIWantToBeHere = whyIWantToBeHere;
     }
 
-    public List<Address> getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(List<Address> address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -209,7 +209,7 @@ public class GrannyFlatDTO {
                          String whyIWantToBeHere,  String flatMateGender,
                          String flatMateAge, String flatMateInfo, String additionalRequirements,
                          int matesNumber, Double rentPrice, boolean readyDomesticHelp, String domesticHelpInfo,
-                         List<Address> address, String benefits, String photo) {
+                         String address, String benefits, String photo) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
