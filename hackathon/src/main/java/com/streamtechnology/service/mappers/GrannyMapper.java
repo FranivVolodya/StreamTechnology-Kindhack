@@ -1,14 +1,21 @@
 package com.streamtechnology.service.mappers;
 
 import com.streamtechnology.dto.GrannyFlatDTO;
+import com.streamtechnology.entity.Address;
 import com.streamtechnology.entity.Granny;
 import com.streamtechnology.entity.RoomDetails;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class GrannyMapper {
 
     public static Granny map(GrannyFlatDTO grannyFlatDTO) {
+        Address address = new Address();
+        address.setCity(grannyFlatDTO.getAddress());
+        List<Address> addressList =new ArrayList();
+        addressList.add(address);
         Granny granny = new Granny();
         granny.setFirstName(grannyFlatDTO.getFirstName());
         granny.setLastName(grannyFlatDTO.getLastName());
@@ -19,7 +26,7 @@ public class GrannyMapper {
         granny.setGender(grannyFlatDTO.getGender());
         granny.setInfoAboutMe(grannyFlatDTO.getInfoAboutMe());
         granny.setWhyIWantToBeHere(grannyFlatDTO.getWhyIWantToBeHere());
-        granny.setAddress(grannyFlatDTO.getAddress());
+        granny.setAddress(addressList);
         granny.setFlatMateGender(grannyFlatDTO.getFlatMateGender());
         granny.setFlatMateAge(grannyFlatDTO.getFlatMateAge());
         granny.setFlatMateInfo(grannyFlatDTO.getFlatMateInfo());

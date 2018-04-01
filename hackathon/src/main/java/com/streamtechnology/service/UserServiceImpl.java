@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserServise {
@@ -54,4 +55,5 @@ public class UserServiceImpl implements UserServise {
     public List<Granny> getAllGranny() {
         return userRepository.findAllByRole(UserRole.GRANNY);
     }
+
 }
