@@ -410,6 +410,18 @@ input {
     font-size: 5em;
     margin-bottom: 0.5em; }
 
+.filter-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap; }
+  .filter-list li {
+    display: inline; }
+    .filter-list li ul .claseess input {
+      margin: 4px !important; }
+
+.open > .dropdown-menu {
+  width: 220px !important; }
+
 .apart-wrapper {
   border: 1px solid #eee;
   cursor: pointer;

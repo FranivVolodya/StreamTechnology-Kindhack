@@ -24,3 +24,22 @@
     margin-bottom: 0.5em;
   }
 }
+.filter-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    display: inline;
+    ul {
+      .claseess{
+        input {
+          margin: 4px !important;
+        }
+      }
+    }
+  }
+}
+
+.open>.dropdown-menu {
+  width:220px !important;
+}
