@@ -13,6 +13,7 @@ import enjoyCompany from '../../asserts/images/enjoy-company.svg';
 import benefitOne from '../../asserts/images/benefitOne.png';
 import benefitTwo from '../../asserts/images/benefitTwo.png';
 import benefitThree from '../../asserts/images/benefitThree.png';
+import Footer from '../Footer/Footer';
 
 const customStyles = {
   content : {
@@ -162,10 +163,10 @@ class HomePage extends Component {
       <section className="partners">
         <div className="row">
           <div className="parents-list">
-            <div><img src={partnersOne} alt=""/></div>
-            <div><img src={partnersTwo} alt=""/></div>
-            <div><img src={partnersThree} alt=""/></div>
-            <div><img src={partnersOne} alt=""/></div>
+            <div><a href="#"><img src={partnersOne} alt=""/></a></div>
+            <div><a href="#"><img src={partnersTwo} alt=""/></a></div>
+            <div><a href=""><img src={partnersThree} alt=""/></a></div>
+            <div><a href=""><img src={partnersOne} alt=""/></a></div>
           </div>
         </div>
       </section>
@@ -277,53 +278,7 @@ class HomePage extends Component {
           </div>
         </div>
       </section>
-
-      <div className="main">
-        <footer className="row">
-          <div className="col-sm-4">
-            <div className="information-wrapper">
-              <ul className="information">
-                <li>
-                  <a href="#">
-                    <img src={logo} alt="" width="98" height="45"/>
-                  </a>
-                </li>
-                <li>
-                  <p>м. Львів, вул. Івана Франка,  34
-                    тел: +38 (095) 44 55 678
-                    +38 (095) 44 55 678
-                  </p>
-                </li>
-                <li>2018 All Rights Reserved</li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-sm-4">
-            <ul className="menu">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Правила</a></li>
-              <li><a href="">Контакти</a></li>
-            </ul>
-            <ul className="social center">
-              <li><a href="#"><i className="fab fa-facebook"></i></a></li>
-              <li><a href="#"><i className="fab fa-facebook"></i></a></li>
-              <li><a href="#"><i className="fab fa-facebook"></i></a></li>
-              <li><a href="#"><i className="fab fa-facebook"></i></a></li>
-            </ul>
-          </div>
-          <div className="col-sm-4">
-            <div className="feedback-wrapper">
-              <ul className="feedback">
-                <li><p><b>Новини</b></p></li>
-                <li>
-                  <p>Підпишись на новини щоб отримати їх першими!</p>
-                </li>
-                <li><input type="text" placeholder="Enter Email"/><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </footer>
-      </div>
+      <Footer />
     </div>
 
   )

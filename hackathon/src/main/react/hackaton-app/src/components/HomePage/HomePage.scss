@@ -274,33 +274,8 @@ and (max-device-width: 667px) {
     margin-top: 50px;
   }
 }
-.main {
+.few-appartments {
   background-color: #f6f8fa;
-  color: #9b9da0;
-}
-.information, .menu, .social, .feedback {
-  list-style-type: none;
-  a {
-    text-decoration: none;
-    color: #9b9da0;
-  }
-}
-
-.menu li, .social li {
-  display: inline;
-  margin-left: 20px;
-}
-
-.information, .feedback {
-  font-size: 14px;
-}
-
-.information-wrapper {
-  width: 250px;
-}
-
-.feedback-wrapper {
-  widows: 240px;
 }
 
 input {
@@ -311,17 +286,17 @@ input {
 
 .quote {
   widows: 750px;
-  height: 250px;
+  height: 230px;
   background-color: #ffffff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   p {
-    font-size: 28px;
+    font-size: 25px;
     font-weight: 300;
     line-height: 1.43;
     letter-spacing: 0.5px;
     text-align: left;
     padding-left: 0.5em;
-    margin-top: 0px;
+    margin-top: 0.3em;
   }
 }
 .face-icon {
