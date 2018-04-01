@@ -1,8 +1,9 @@
 import axios from 'axios';
 
+var SERVER_URL = 'http://localhost:8090';
 class SessionApi {
   getStartApartment(jwt) {
-    const url = 'http://192.168.4.236:8090/granny/all';
+    const url = SERVER_URL + '/granny/all';
 
 
     return axios.get(url)
@@ -15,7 +16,7 @@ class SessionApi {
       'email': email,
       'password':password
     };
-    const url = 'http://192.168.4.236:8090/login';
+    const url = SERVER_URL + '/login';
     const config = { headers: { 'Content-Type': 'application/json' }};
 
     return axios.post(url, data, config)

@@ -1,6 +1,7 @@
 import {
   GET_APARTMENTS,
   LOG_IN_SUCCESS,
+    LOG_IN_FAIL,
 } from '../constants/ourconstants';
 const defaultState = {
   data: [{
@@ -56,6 +57,11 @@ const homePage = (state = defaultState, action) => {
       const updateRedirect = action.data.status;
       return { ...state,  redirect: updateRedirect} ;
     }
+      case LOG_IN_FAIL:{
+          console.log('FROM LOGIN', action.data);
+          const updateRedirect = action.data.status;
+          return { ...state,  redirect: updateRedirect}
+      }
 
     default: {
       return state;
